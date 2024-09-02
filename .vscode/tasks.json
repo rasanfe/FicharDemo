@@ -1,0 +1,48 @@
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+
+    {
+      "version": "2.0.0",
+      "tasks": [
+          {
+              "label": "Start Expo",
+              "type": "shell",
+              "command": "npx",
+              "args": [
+                  "expo",
+                  "start"
+              ],
+              "group": {
+                  "kind": "build",
+                  "isDefault": true
+              },
+              "presentation": {
+                  "echo": true,
+                  "reveal": "always",
+                  "focus": false,
+                  "panel": "shared"
+              },
+              "problemMatcher": []
+          },
+          {
+              "label": "Run Tests",
+              "type": "shell",
+              "command": "npm",
+              "args": [
+                  "test"
+              ],
+              "group": {
+                  "kind": "test",
+                  "isDefault": true
+              },
+              "presentation": {
+                  "echo": true,
+                  "reveal": "always",
+                  "focus": false,
+                  "panel": "shared"
+              },
+              "problemMatcher": []
+          }
+      ]
+  }
+  
