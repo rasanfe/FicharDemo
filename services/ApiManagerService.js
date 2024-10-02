@@ -3,8 +3,7 @@ import axios from 'axios';
 class ApiManagerService {
   constructor() {
     this.apiUrl = ''; // Inicialmente vacío
-    this.jwtToken = '';
-    this.errorText = '';
+     this.errorText = '';
     this.axiosInstance = null; // Lo inicializaremos después de cargar el `apiUrl`
 
     this.initialize();

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Image, ActivityIndicator, StyleSheet, Text } from 'react-native';
 import useAuth from './hooks/useAuth';
 import useNavigationBarVisibility from './hooks/useNavigationBarVisibility';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 
 const HomeScreen = ({ navigation }) => {
@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
 
   useEffect(() => {
     const checkConfig = async () => {
-      const apiEndpoint = await AsyncStorage.getItem('apiEndpoint');
+      const apiEndpoint = 'https://www.rsrsystem.com/ficharapidemo/api';
 
       if (!apiEndpoint) {
         // Navegar a la pantalla de Configuración si no existe la configuración
