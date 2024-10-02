@@ -13,7 +13,7 @@ class ApiManagerService {
   async initialize() {
     try {
           
-      this.apiUrl = 'https://www.rsrsystem.com/ficharapipruebas/api';
+      this.apiUrl = 'https://www.rsrsystem.com/ficharapidemo/api';
       //this.apiUrl = 'http://10.0.2.2:5950/api'; 
     
       this.axiosInstance = axios.create({
