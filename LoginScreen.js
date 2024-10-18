@@ -92,6 +92,7 @@ const LoginScreen = ({ navigation }) => {
             disabled={isLoading}
           />
         </View>
+         {/* <Text style={styles.text}>APPEON POWERBUILDER SUMMIT 2024</Text>*/}
       </View>
       {isLoading && <ActivityIndicator size="large" color="#0000ff" />}
       <ButtonContainer titleYes="Aceptar" onPressYes={handleLoginPress} titleNo="Salir" onPressNo={handleExit} disabled={isLoading} />
