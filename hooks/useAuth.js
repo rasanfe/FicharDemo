@@ -25,8 +25,7 @@ const useAuth = (navigation) => {
         return true;
       } else {
         Alert.alert('Error', ApiManager.getLastError());
-        //navigation.navigate('Login');
-        navigation.reset({
+           navigation.reset({
           index: 0,
           routes: [{ name: 'Login' }],
         });
@@ -48,10 +47,8 @@ const useAuth = (navigation) => {
       const storedRememberMe = await AsyncStorage.getItem('rememberMe');
 
       if (storeduserName && storedPassword && storedRememberMe === 'true') {
-       
-     await handleLogin(storeduserName, storedPassword, true);
+            await handleLogin(storeduserName, storedPassword, true);
       } else {
-        //navigation.navigate('Login');
         navigation.reset({
           index: 0,
           routes: [{ name: 'Login' }],
@@ -59,7 +56,6 @@ const useAuth = (navigation) => {
       }
     }  catch (error) {
       console.error('Failed to load stored data', error);
-      //navigation.navigate('Login'); //Añado esto Por si no hay conexion a Interner y falla el Autologin
       navigation.reset({
         index: 0,
         routes: [{ name: 'Login' }],

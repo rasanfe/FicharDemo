@@ -8,7 +8,6 @@ class ApiManagerService {
 
     this.initialize();
   }
-
   async initialize() {
     try {
           
@@ -40,8 +39,6 @@ class ApiManagerService {
       return null;
     }
   }
-
- 
   async sendPostRequest(url, data) {
     try {
       const response = await this.axiosInstance.post(url, data, this.getAuthHeaders());
@@ -51,7 +48,6 @@ class ApiManagerService {
       return null;
     }
   }
-
   async login(user, pin) {
     
     const url = this.getUrl('Auth', 'Login');
@@ -64,17 +60,12 @@ class ApiManagerService {
     try {
       const response = await this.sendPostRequest(url, authUser);
       console.log(response.data);
-           if (response.data == true ) {
-              return true;
-      } else {
-        this.errorText = 'Usuario o Contraseña Incorrecta';
-        return false;
-      }
+      return true;
     } catch (error) {
+      this.errorText = 'Usuario o Contraseña Incorrecta';
       return false;
     }
   }
-
 
   handleError(error) {
     if (error.response) {
@@ -96,5 +87,4 @@ class ApiManagerService {
     return { headers: headers };
   }
 }
-
 export default new ApiManagerService();
